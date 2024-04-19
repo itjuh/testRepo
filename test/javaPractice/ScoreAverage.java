@@ -17,42 +17,59 @@ public class ScoreAverage {
         double aver = scoreAver.averageCalculator(score);
         // 5. 구한 평균을 출력한다.
         System.out.print(student+"학생의");
-        // 반복되는 부분은 for문으로 처리함
+        // 반복되는 부분은 for문으로 처리함 ( 줄바꿈 방지를 위해서 println안쓰고 print씀 )
         // subject[0]은 과목명 수학을 출력 score[0]은 입력받은 점수를 출력
         for(int i=0; i<subject.length; i++){
             System.out.print(" "+subject[i]+" : "+score[i]+"점");
+            // 마지막 과목 전까지 ,쉼표처리
             if(i != subject.length -1){
                 System.out.print(",");
-            }else{
+            }
+            // 마지막 과목은 띄어쓰기 처리
+            else{
                 System.out.print(" ");
             }
         }
         System.out.print("이며 평균은 "+aver+" 입니다.");
     }
+
     // 과목배열을 주면 과목의 점수를 입력받아서 배열로 반환하는 프로그램
     public int[] inputScore(String subject[]){
+        // 1. 입력받을 장치 : 스캐너클래스
         Scanner scan = new Scanner(System.in);
+        // 2. 입력받을 공간 : 배열
         int[] score = new int[5];
+        // 3. 입력받기 for문
         for(int i = 0; i< subject.length;i++){
             System.out.println(subject[i]+"점수를 입력하세요 : ");
             score[i] = scan.nextInt();
         }
+        // 4. 반환하기
         return score;
-    }
+    } //////// inputScore ///////
+
     // 이름을 입력받는 프로그램
     public String inputName(){
+        // 1. 입력받을 장치 : 스캐너클래스
         Scanner scan = new Scanner(System.in);
         System.out.println("학생명을 입력하세요 : ");
+        // 2. 입력받을 공간 : String에 바로 입력값 넣기
         String name = scan.nextLine();
+        // 3. 반환하기
         return name;
-    }
+    } //////// inputName ///////
+
     // 점수배열을 주면 평균을 반환하는 프로그램
     public double averageCalculator(int num[]){
+        // 1. 합계를 담을 공간
         int sumScore = 0;
+        // 2. 합산하기
         for(int i = 0; i < num.length; i++){
             sumScore += num[i];
         }
+        // 3. 평균 계산하기
         double average = (double)sumScore/(double)num.length;
+        // 4. 반환하기
         return average;
-    }
+    } ////// averageCalculator ///////
 }
