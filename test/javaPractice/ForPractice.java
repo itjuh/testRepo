@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ForPractice {
-    public static void main(String[] args) {
+    p2ublic static void main(String[] args) {
         ForPractice for1 = new ForPractice();
         // 구구단 출력하기
         // for1.showGugu();
@@ -11,6 +11,14 @@ public class ForPractice {
         System.out.println("원하는 구구단 단수를 입력하세요!(2~9단까지 가능합니다.)");
         int selectedNum = scan.nextInt();
         for1.makeGugu(selectedNum);
+        String s1 = "Cat";
+        String s2 = "Cat";
+        String s3 = new String("Cat");
+        String s4 = new String("Cat");
+        
+        System.out.println(s1 == s2);  // true
+        System.out.println(s1 == s3);  // false
+        System.out.println(s3 == s4);  // false
     }
     // 구구단 단수 받아서 출력하기 프로그램
     public void makeGugu(int num){

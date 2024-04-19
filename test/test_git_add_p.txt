@@ -1,3 +1,5 @@
-git add -p 확인용 파일입니다
+문자열이 String pool 저장이 된다
+heap에도 저장한다.
 
-pull test 할겁니다.
+String name = "김다영";
+String name2 = "김다영2";
